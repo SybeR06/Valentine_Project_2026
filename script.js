@@ -28,7 +28,8 @@ heart.addEventListener("click", () => {
         document.getElementById("bottomText").style.display = "none";
 
         //Move to stage 5
-        console.log("Heart popped - Go to next stage");
+        console.log("Go to next stage 6");
+        openSlideshow();
     }), 600;
 });
 
@@ -63,4 +64,46 @@ function createSakura() {
     document.body.appendChild(sakura);
 
     setTimeout(() => sakura.remove(), parseFloat(sakura.style.animationDuration) * 1000);
+}
+
+// Enter images and texts
+const slides = [
+    { image: "Images/p1.jpg", text: "Test1" },
+    { image: "Images/p2.jpg", text: "Test2" },
+    { image: "Images/p3.jpg", text: "Test3" },
+    { image: "Images/p4.jpg", text: "Test4" }
+];
+
+let currentSlide = 0;
+
+function openSlideshow() {
+    main.style.display = "none" // hide heart
+    const slideshow = document.getElementById("slideshow");
+    const slideImage = document.getElementById("slideImage");
+    const slideText = document.getElementById("slideText");
+    const nextBtn = document.getElementById("nextBtn");
+
+    slideshow.classList.remove("hidden");
+
+    //Show first slide
+    slideImage.arc = slides[currentSlide].image;
+    slideText.textContent = slides[currentSlide].text;
+
+    //Slide interval
+    const slideInterval = setInterval(() => {
+        currentSlide++;
+        if (currentSlide < slides.length) {
+            slideImage.arc = slides[currentSlide].image;
+            slideText.textContent = slides[currentSlide].text;
+        }
+        else {
+            clearInterval(slideInterval);
+            nextBtn.classList.remove("hidden"); // Show "next" button
+        }
+    }, 3000); // Change slides every 3 secs
+
+    nextBtn.addEventListener("click", () => {
+        //Move to next stage
+        console.log("Go to Stage 7");
+    });
 }
