@@ -86,14 +86,14 @@ function openSlideshow() {
     slideshow.classList.remove("hidden");
 
     //Show first slide
-    slideImage.arc = slides[currentSlide].image;
+    slideImage.src = slides[currentSlide].image;
     slideText.textContent = slides[currentSlide].text;
 
     //Slide interval
     const slideInterval = setInterval(() => {
         currentSlide++;
         if (currentSlide < slides.length) {
-            slideImage.arc = slides[currentSlide].image;
+            slideImage.src = slides[currentSlide].image;
             slideText.textContent = slides[currentSlide].text;
         }
         else {
