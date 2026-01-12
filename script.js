@@ -28,9 +28,9 @@ heart.addEventListener("click", () => {
         document.getElementById("bottomText").style.display = "none";
 
         //Move to stage 5
-        console.log("Go to next stage 6");
+        console.log("Go to stage 6");
         openSlideshow();
-    }), 600;
+    }, 600);
 });
 
 function createConfetti() {
