@@ -89,6 +89,8 @@ function openSlideshow() {
     slideImage.src = slides[currentSlide].image;
     slideText.textContent = slides[currentSlide].text;
 
+    showSlide(currentSlide);
+
     //Slide interval
     const slideInterval = setInterval(() => {
         currentSlide++;
@@ -106,4 +108,13 @@ function openSlideshow() {
         //Move to next stage
         console.log("Go to Stage 7");
     });
+}
+
+function showSlide(index) {
+    slideImage.classList.remove("fade"); // reset animation
+    void slideImage.offsetWidth;         // force reflow
+    slideImage.classList.add("fade");
+
+    slideImage.src = slides[index].image;
+    slideText.textContent = slides[index].text;
 }
