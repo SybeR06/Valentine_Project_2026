@@ -41,7 +41,7 @@ function createConfetti() {
         const y = (Math.random() - 0.5) * 200 + "px";
 
         miniHeart.style.setProperty("--x", x);
-        miniHeart.style.setProperty("--y", Y);
+        miniHeart.style.setProperty("--y", y);
 
         miniHeart.style.left = heart.offsetLeft + 120 + "px";
         miniHeart.style.top = heart.offsetTop + 120 + "px";
@@ -62,5 +62,5 @@ function createSakura() {
 
     document.body.appendChild(sakura);
 
-    setTimeout(() => sakura.remove(), 1000);
+    setTimeout(() => sakura.remove(), parseFloat(sakura.style.animationDuration) * 1000);
 }
