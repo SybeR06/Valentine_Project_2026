@@ -33,12 +33,12 @@ heart.addEventListener("click", () => {
 });
 
 function createConfetti() {
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 15; i++) {
         const miniHeart = document.createElement("div");
         miniHeart.classList.add("mini-heart");
 
-        const x = (Math.random() - 0.5) * 200 + "px";
-        const y = (Math.random() - 0.5) * 200 + "px";
+        const x = (Math.random() - 0.5) * 500 + "px";
+        const y = (Math.random() - 0.5) * 500 + "px";
 
         miniHeart.style.setProperty("--x", x);
         miniHeart.style.setProperty("--y", y);

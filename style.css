@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Brush Script MT', cursive;
-    background-image: url("Images\Backdrop.jpg");
+    background-image: url("Images/Backdrop.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,8 +52,8 @@ button {
 
 /*Heart Shape*/
 #heart {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-color: hotpink;
     transform: rotate(45deg);
     position: relative;
@@ -67,8 +67,8 @@ button {
 #heart::before,
 #heart::after {
     content: "";
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     background-color: hotpink;
     border-radius: 50%;
     position: absolute;
@@ -76,13 +76,13 @@ button {
 }
 
 #heart::before {
-    top: -125px;
+    top: -100px;
     left: 0;
 }
 
 #heart::after {
     top: 0;
-    left: -125px;
+    left: -100px;
 }
 
 /*Text Wrapper*/
@@ -139,9 +139,9 @@ button {
 /*Heart Confetti*/
 .mini-heart {
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: hotpink;
+    width: 20px;
+    height: 20px;
+    background-color: red;
     transform: rotate(45deg);
     animation: burst 0.8s ease-out forwards;
 }
@@ -151,7 +151,7 @@ button {
         content: "";
         width: 15px;
         height: 15px;
-        background-color: hotpink;
+        background-color: red;
         border-radius: 50%;
         position: absolute;
     }
@@ -178,7 +178,7 @@ button {
     top: -20px;
     width: 12px;
     height: 12px;
-    background: pink;
+    background: hotpink;
     border-radius: 50% 50% 50% 0;
     transform: rotate(45deg);
     opacity: 0.7;
