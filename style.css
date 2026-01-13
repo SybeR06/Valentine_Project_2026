@@ -41,7 +41,7 @@ button {
 
 /*Hidden class*/
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .show {
@@ -245,25 +245,32 @@ button {
 }
 
 #textBox {
-    max-width: 80%;
+    display: inline-block;
+    width: auto;
+    height: auto;
     padding: 20px 30px;
     background-color: rgba(255, 255, 255, 0.5); /* white with 50% opacity */
     border-radius: 15px;
     margin-top: 20px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1.6;
     color: black;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     display: none;
 }
 
-#nextBtn {
+#nextBtn, #replayBtn {
     padding: 10px 20px;
     font-size: 18px;
     cursor: pointer;
-    border: none;
+    display: inline-block;
+    gap: 10px;
+    align-items: flex-end;
+    border: double;
     border-radius: 8px;
+    margin-left: 5px;
+    margin-top: 5px;
     background-color: lightcoral;
     color: white;
 }

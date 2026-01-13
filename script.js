@@ -93,8 +93,10 @@ function openSlideshow() {
     main.style.display = "none" // hide heart
 
     const slideshow = document.getElementById("slideshow");
+    const textBox = document.getElementById("textBox");
 
     const nextBtn = document.getElementById("nextBtn");
+    const replayBtn = document.getElementById("replayBtn");
 
     slideshow.classList.remove("hidden");
     textBox.style.display = "block";
@@ -110,14 +112,10 @@ function openSlideshow() {
         }
         else {
             clearInterval(slideInterval);
+            replayBtn.classList.remove("hidden");// Show replay button
             nextBtn.classList.remove("hidden"); // Show "next" button
         }
     }, 5000); // Change slides every 5 secs
-
-    nextBtn.addEventListener("click", () => {
-        //Move to next stage
-        console.log("Go to Stage 7");
-    });
 
     //Background music
     bgMusic.volume = 0.4;
@@ -128,6 +126,31 @@ function openSlideshow() {
         bgMusic.pause();
         bgMusic.currentTime = 0;
         console.log("Go to Stage 7");
+    };
+
+    replayBtn.onclick = () => {
+        currentSlide = 0;
+        showSlide(currentSlide);
+
+        // Hide buttons again
+        nextBtn.classList.add("hidden");
+        replayBtn.classList.add("hidden");
+
+        // Restart background music
+        bgm.currentTime = 0;
+        bgm.play();
+
+        // Restart slideshow interval
+        slideInterval = setInterval(() => {
+            currentSlide++;
+            if (currentSlide < slides.length) {
+                showSlide(currentSlide);
+            } else {
+                clearInterval(slideInterval);
+                nextBtn.classList.remove("hidden");
+                replayBtn.classList.remove("hidden");
+            }
+        }, 5000);
     };
 }
 
