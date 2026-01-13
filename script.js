@@ -97,6 +97,7 @@ function openSlideshow() {
     const nextBtn = document.getElementById("nextBtn");
 
     slideshow.classList.remove("hidden");
+    textBox.style.display = "block";
 
     currentSlide = 0;
     showSlide(currentSlide);
