@@ -240,7 +240,7 @@ button {
 
 #slideText {
     font-size: 24px;
-    color: black;
+    font-family: 'Comic Sans MS', sans-serif !important;
     text-align: center;
 }
 

@@ -79,7 +79,10 @@ function createSakura() {
 // Enter images and texts
 const slides = [
     { image: "Images/p1.jpg", text: "Test1" },
-    { image: "Images/p2.jpg", text: "Test2" },
+    {
+        image: "Images/p2.jpg",
+        text: "Date<br>One of my favourite days of the year <3"
+    },
     { image: "Images/p3.jpg", text: "Test3" },
     { image: "Images/p4.jpg", text: "Test4" }
 ];
@@ -138,6 +141,7 @@ function showSlide(index) {
     // Update content
     slideImage.src = slides[index].image;
     slideText.textContent = slides[index].text;
+    slideText.innerHTML = slides[index].text;
 
     // Restart fade
     slideImage.style.animation = "";
