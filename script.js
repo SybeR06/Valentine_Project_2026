@@ -18,14 +18,17 @@ startBtn.addEventListener("click", () => {
 heart.addEventListener("click", () => {
     heart.style.pointerEvents = "none";
 
-    heartWrapper.style.animation = "none";
-    heartWrapper.classList.add("pop");
+    // Force browser to sync layout BEFORE starting effects
+    heart.offsetWidth;
+
+    // Start ALL effects together
+    heart.classList.add("pop");
 
     popSound.currentTime = 0;
     popSound.play();
-    setTimeout(() => {
-        createConfetti();
-    }, 350);
+
+    createConfetti();
+
     setTimeout(() => {
         heartWrapper.style.display = "none";
         document.getElementById("bottomText").style.display = "none";
@@ -105,7 +108,7 @@ function openSlideshow() {
             clearInterval(slideInterval);
             nextBtn.classList.remove("hidden"); // Show "next" button
         }
-    }, 3000); // Change slides every 3 secs
+    }, 5000); // Change slides every 5 secs
 
     nextBtn.addEventListener("click", () => {
         //Move to next stage

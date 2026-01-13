@@ -62,6 +62,7 @@ button {
     overflow: visible;
     z-index: 0;
     cursor: pointer;
+    animation: heartbeat 1s infinite;
 }
 
 #heart::before,
@@ -88,7 +89,7 @@ button {
 #heartWrapper {
     transform: rotate(45deg);
     transform-origin: center;
-    animation: heartbeat 1s infinite;
+
 }
 
 
@@ -125,18 +126,15 @@ button {
 /*Heart pop*/
 @keyframes pop {
     0% {
-        scale: 1;
-        opacity: 1;
+        transform: scale(0.98);
     }
 
     60% {
-        scale: 1.5;
-        opacity: 1;
+        transform: scale(1.5);
     }
 
     100% {
-        scale: 0;
-        opacity: 0;
+        transform: scale(0);
     }
 }
 
