@@ -5,7 +5,9 @@
 const startBtn = document.getElementById("startBtn");
 const main = document.getElementById("main");
 const heart = document.getElementById("heart");
+const heartWrapper = document.getElementById("heartWrapper");
 const popSound = document.getElementById("popSound");
+const bgm = document.getElementById("bgMusic");
 
 startBtn.addEventListener("click", () => {
     startBtn.style.display = "none"; //hide button
@@ -14,26 +16,31 @@ startBtn.addEventListener("click", () => {
 
 // Heart pop
 heart.addEventListener("click", () => {
+    heart.style.pointerEvents = "none";
+
+    heartWrapper.style.animation = "none";
+    heartWrapper.classList.add("pop");
+
     popSound.currentTime = 0;
     popSound.play();
-
-    heart.classList.add("pop");
-    console.log("Ready");
-
-    createConfetti(); // Call Confetti function
-
-    //Hide bottom text after pop
     setTimeout(() => {
-        heart.style.display = "none";
+        createConfetti();
+    }, 350);
+    setTimeout(() => {
+        heartWrapper.style.display = "none";
         document.getElementById("bottomText").style.display = "none";
 
-        //Move to stage 5
-        console.log("Go to stage 6");
+
         openSlideshow();
     }, 600);
 });
 
 function createConfetti() {
+    const rect = heart.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+
     for (let i = 0; i < 15; i++) {
         const miniHeart = document.createElement("div");
         miniHeart.classList.add("mini-heart");
@@ -44,8 +51,8 @@ function createConfetti() {
         miniHeart.style.setProperty("--x", x);
         miniHeart.style.setProperty("--y", y);
 
-        miniHeart.style.left = heart.offsetLeft + 120 + "px";
-        miniHeart.style.top = heart.offsetTop + 120 + "px";
+        miniHeart.style.left = centerX + "px";
+        miniHeart.style.top = centerY + "px";
 
         document.body.appendChild(miniHeart);
         setTimeout(() => miniHeart.remove(), 800);
@@ -78,25 +85,21 @@ let currentSlide = 0;
 
 function openSlideshow() {
     main.style.display = "none" // hide heart
+
     const slideshow = document.getElementById("slideshow");
-    const slideImage = document.getElementById("slideImage");
-    const slideText = document.getElementById("slideText");
+
     const nextBtn = document.getElementById("nextBtn");
 
     slideshow.classList.remove("hidden");
 
-    //Show first slide
-    slideImage.src = slides[currentSlide].image;
-    slideText.textContent = slides[currentSlide].text;
-
+    currentSlide = 0;
     showSlide(currentSlide);
 
     //Slide interval
     const slideInterval = setInterval(() => {
         currentSlide++;
         if (currentSlide < slides.length) {
-            slideImage.src = slides[currentSlide].image;
-            slideText.textContent = slides[currentSlide].text;
+            showSlide(currentSlide);
         }
         else {
             clearInterval(slideInterval);
@@ -108,13 +111,32 @@ function openSlideshow() {
         //Move to next stage
         console.log("Go to Stage 7");
     });
+
+    //Background music
+    bgMusic.volume = 0.4;
+    bgMusic.currentTime = 0;
+    bgMusic.play();
+
+    nextBtn.onclick = () => {
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+        console.log("Go to Stage 7");
+    };
 }
 
 function showSlide(index) {
-    slideImage.classList.remove("fade"); // reset animation
-    void slideImage.offsetWidth;         // force reflow
-    slideImage.classList.add("fade");
+    const slideImage = document.getElementById("slideImage");
+    const slideText = document.getElementById("slideText");
 
+    // Reset animation
+    slideImage.style.animation = "none";
+    slideImage.offsetHeight; // force reflow
+
+    // Update content
     slideImage.src = slides[index].image;
     slideText.textContent = slides[index].text;
+
+    // Restart fade
+    slideImage.style.animation = "";
+    slideImage.classList.add("fade");
 }

@@ -55,10 +55,10 @@ button {
     width: 200px;
     height: 200px;
     background-color: hotpink;
-    transform: rotate(45deg);
+    transform: none;
     position: relative;
     margin-top: 50px;
-    animation: heartbeat 1s infinite;
+
     overflow: visible;
     z-index: 0;
     cursor: pointer;
@@ -85,6 +85,14 @@ button {
     left: -100px;
 }
 
+#heartWrapper {
+    transform: rotate(45deg);
+    transform-origin: center;
+    animation: heartbeat 1s infinite;
+}
+
+
+
 /*Text Wrapper*/
 #mainText {
     position: absolute; /* absolute inside the heart */
@@ -102,32 +110,32 @@ button {
 /* Heartbeat animation */
 @keyframes heartbeat {
     0% {
-        transform: rotate(45deg) scale(1);
+        transform: scale(1);
     }
 
     50% {
-        transform: rotate(45deg) scale(1.2);
+        transform: scale(1.2);
     }
 
     100% {
-        transform: rotate(45deg) scale(1);
+        transform: scale(1);
     }
 }
 
 /*Heart pop*/
 @keyframes pop {
     0% {
-        transform: rotate(45deg) scale(1);
+        scale: 1;
         opacity: 1;
     }
 
     60% {
-        transform: rotate(45deg) scale(1.5);
+        scale: 1.5;
         opacity: 1;
     }
 
     100% {
-        transform: rotate(45deg) scale(0);
+        scale: 0;
         opacity: 0;
     }
 }
@@ -210,9 +218,14 @@ button {
         transform: scale(0.97);
     }
     to {
-        opacity: 0;
+        opacity: 1;
         transform: scale(1);
     }
+}
+
+#slideImage:not([src]),
+#slideImage[src=""] {
+    display: none;
 }
 
 #slideImage {
@@ -222,7 +235,7 @@ button {
     margin-bottom: 20px;
 
     border: 8px solid white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 30px red;
     background-color: white;
     padding: 5px;
 }
