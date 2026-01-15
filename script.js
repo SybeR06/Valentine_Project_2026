@@ -104,7 +104,7 @@ const slides = [
     { image: "Images/VD Project/25_6_10.jpg", text: "10 June 2025<br>InsertText" },
     { image: "Images/VD Project/25_7_12.jpg", text: "12 July 2025<br>InsertText" },
     { image: "Images/VD Project/25_9_16.jpg", text: "16 September 2025<br>InsertText" },
-    { image: "Images/Future.jpg", text: "Future to come??<br>InsertText" }
+    { image: "Images/Future.jpg", text: "Future to come<3<br>InsertText" }
 
 ];
 
