@@ -78,13 +78,34 @@ function createSakura() {
 
 // Enter images and texts
 const slides = [
-    { image: "Images/p1.jpg", text: "Test1" },
-    {
-        image: "Images/p2.jpg",
-        text: "Date<br>One of my favourite days of the year <3"
-    },
-    { image: "Images/p3.jpg", text: "Test3" },
-    { image: "Images/p4.jpg", text: "Test4" }
+    { image: "Images/VD Project/22_6_9.jpg", text: "9 June 2022<br>InsertText" },
+    { image: "Images/VD Project/23_6_18.jpeg", text: "18 June 2023<br>InsertText" },
+    { image: "Images/VD Project/23_6_19.jpg", text: "19 June 2023<br>InsertText" },
+    { image: "Images/VD Project/23_7_10.jpg", text: "10 July 2023<br>InsertText" },
+    { image: "Images/VD Project/23_8_29.jpg", text: "29 August 2023<br>InsertText" },
+    { image: "Images/VD Project/23_9_1.jpg", text: "1 September 2023<br>InsertText" },
+    { image: "Images/VD Project/23_11_12.jpg", text: "12 November 2023<br>InsertText" },
+    { image: "Images/VD Project/23_11_18.jpg", text: "18 November 2023<br>InsertText" },
+    { image: "Images/VD Project/23_12_30.jpg", text: "30 December 2023<br>InsertText" },
+    { image: "Images/VD Project/24_1_24.jpg", text: "24 January 2024<br>InsertText" },
+    { image: "Images/VD Project/24_3_14.jpg", text: "14 March 2024<br>InsertText" },
+    { image: "Images/VD Project/24_3_17.jpg", text: "17 March 2024<br>InsertText" },
+    { image: "Images/VD Project/24_6_21.jpg", text: "21 June 2024<br>InsertText" },
+    { image: "Images/VD Project/24_6_21-2.jpg", text: "21 June 2024<br>InsertText" },
+    { image: "Images/VD Project/24_7_2.jpg", text: "2 July 2024<br>InsertText" },
+    { image: "Images/VD Project/24_8_24.jpg", text: "24 August 2024<br>InsertText" },
+    { image: "Images/VD Project/24_10_23.jpg", text: "23 October 2024<br>InsertText" },
+    { image: "Images/VD Project/24_12_13.jpg", text: "13 December 2024<br>InsertText" },
+    { image: "Images/VD Project/25_1_4.jpg", text: "4 January 2025<br>InsertText" },
+    { image: "Images/VD Project/25_2_1.jpg", text: "1 February 2025<br>InsertText" },
+    { image: "Images/VD Project/25_2_24.jpg", text: "24 February 2025<br>InsertText" },
+    { image: "Images/VD Project/25_3_4.jpg", text: "4 March 2025<br>InsertText" },
+    { image: "Images/VD Project/25_5_17.jpg", text: "17 May 2025<br>InsertText" },
+    { image: "Images/VD Project/25_6_10.jpg", text: "10 June 2025<br>InsertText" },
+    { image: "Images/VD Project/25_7_12.jpg", text: "12 July 2025<br>InsertText" },
+    { image: "Images/VD Project/25_9_16.jpg", text: "16 September 2025<br>InsertText" },
+    { image: "Images/Future.jpg", text: "Future to come??<br>InsertText" }
+
 ];
 
 let currentSlide = 0;
