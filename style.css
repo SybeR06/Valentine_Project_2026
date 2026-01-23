@@ -2,13 +2,20 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: stretch;
     font-family: 'Brush Script MT', cursive;
     background-image: url("Images/Backdrop.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #header, #footer {
@@ -57,7 +64,7 @@ button {
     background-color: hotpink;
     transform: none;
     position: relative;
-    margin-top: 50px;
+    margin-top: 0;
 
     overflow: visible;
     z-index: 0;
@@ -325,5 +332,5 @@ button {
     font-family: Rockwell, serif;
     font-size: 20px;
     text-align: center;
-    margin-top: 85px;
+    margin-top: 20px;
 }

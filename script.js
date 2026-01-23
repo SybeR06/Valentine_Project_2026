@@ -195,7 +195,7 @@ function showSlide(index) {
 }
 
 // Stage 7
-function startStage7 {
+function startStage7() {
     const slideshow = document.getElementById("slideshow");
     const stage7 = document.getElementById("stage7");
     const sakura = document.getElementById("sakura");
