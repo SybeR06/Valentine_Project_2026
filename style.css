@@ -2,8 +2,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: 'Brush Script MT', cursive;
     background-image: url("Images/Backdrop.jpg");
     background-position: center;
@@ -32,6 +30,8 @@
 button {
     padding: 15px 30px;
     font-size: 18px;
+    align-self: center;
+    margin-top: 40px;
     cursor: pointer;
     border: none;
     border-radius: 8px;
@@ -50,41 +50,49 @@ button {
     align-items: center;
 }
 
+#main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    outline: 2px dashed red;
+}
+
 /*Heart Shape*/
 #heart {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     background-color: hotpink;
     transform: none;
     position: relative;
-    margin-top: 50px;
-
+    margin-top: 0;
     overflow: visible;
     z-index: 0;
     cursor: pointer;
     animation: heartbeat 1s infinite;
 }
 
-#heart::before,
-#heart::after {
-    content: "";
-    width: 200px;
-    height: 200px;
-    background-color: hotpink;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1;
-}
+    #heart::before,
+    #heart::after {
+        content: "";
+        width: 180px;
+        height: 180px;
+        background-color: hotpink;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+    }
 
 #heart::before {
-    top: -100px;
+    top: -90px;
     left: 0;
 }
 
-#heart::after {
-    top: 0;
-    left: -100px;
-}
+    #heart::after {
+        top: 0;
+        left: -90px;
+    }
 
 #heartWrapper {
     transform: rotate(45deg);
@@ -276,7 +284,7 @@ button {
 /* Bottom text */
 #bottomText {
     font-family: Rockwell, serif;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     margin-top: 20px;
 }
