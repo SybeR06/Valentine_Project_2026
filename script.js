@@ -108,71 +108,20 @@ const slides = [
 
 ];
 
-let currentSlide = 0;
+bgm.currentTime = 0;
+bgm.play();
 
-function openSlideshow() {
-    main.style.display = "none" // hide heart
-
-    const slideshow = document.getElementById("slideshow");
-    const textBox = document.getElementById("textBox");
-
-    const nextBtn = document.getElementById("nextBtn");
-    const replayBtn = document.getElementById("replayBtn");
-
-    slideshow.classList.remove("hidden");
-    textBox.style.display = "block";
-
-    currentSlide = 0;
-    showSlide(currentSlide);
-
-    //Slide interval
-    const slideInterval = setInterval(() => {
-        currentSlide++;
-        if (currentSlide < slides.length) {
-            showSlide(currentSlide);
-        }
-        else {
-            clearInterval(slideInterval);
-            replayBtn.classList.remove("hidden");// Show replay button
-            nextBtn.classList.remove("hidden"); // Show "next" button
-        }
-    }, 5000); // Change slides every 5 secs
-
-    //Background music
-    bgMusic.volume = 0.4;
-    bgMusic.currentTime = 0;
-    bgMusic.play();
-
-    nextBtn.onclick = () => {
-        bgMusic.pause();
-        bgMusic.currentTime = 0;
-        console.log("Go to Stage 7");
-        startStage7();
-    };
-
-    replayBtn.onclick = () => {
-        currentSlide = 0;
+// Restart slideshow interval
+slideInterval = setInterval(() => {
+    currentSlide++;
+    if (currentSlide < slides.length) {
         showSlide(currentSlide);
-
-        // Hide buttons again
-        nextBtn.classList.add("hidden");
-        replayBtn.classList.add("hidden");
-
-        // Restart background music
-        bgm.currentTime = 0;
-        bgm.play();
-
-        // Restart slideshow interval
-        slideInterval = setInterval(() => {
-            currentSlide++;
-            if (currentSlide < slides.length) {
-                showSlide(currentSlide);
-            } else {
-                clearInterval(slideInterval);
-                nextBtn.classList.remove("hidden");
-                replayBtn.classList.remove("hidden");
-            }
-        }, 5000);
+    } else {
+        clearInterval(slideInterval);
+        nextBtn.classList.remove("hidden");
+        replayBtn.classList.remove("hidden");
+    }
+}, 5000);
     };
 }
 
@@ -192,36 +141,5 @@ function showSlide(index) {
     // Restart fade
     slideImage.style.animation = "";
     slideImage.classList.add("fade");
+
 }
-
-// Stage 7
-function startStage7() {
-    const slideshow = document.getElementById("slideshow");
-    const stage7 = document.getElementById("stage7");
-    const sakura = document.getElementById("sakura");
-    const video = document.getElementById("finalVid");
-
-    stage7.classList.remove = "hidden" // Show stage 7
-    sakura.classList.add("sakura") // Sakura transition
-
-    setTimeout(() => {
-        slideshow.classList.add("hidden"); //Hide slide show
-        sakura.classList.remove("sakura_sweep"); //Remove transition
-
-        //Start Video
-        video.volume = 0.6;
-        video.currentTime = 0;
-        video.play();
-    }, 1500);
-}
-
-const video = document.getElementById("finalVideo");
-const endBtn = document.getElementById("endBtn");
-
-video.addEventListener("play", () => {
-    console.log("Video is playing");
-})
-
-video.addEventListener("ended", () => {
-    endBtn.classList.remove("hidden");
-});

@@ -2,20 +2,13 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
     font-family: 'Brush Script MT', cursive;
     background-image: url("Images/Backdrop.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-#main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #header, #footer {
@@ -64,7 +57,7 @@ button {
     background-color: hotpink;
     transform: none;
     position: relative;
-    margin-top: 0;
+    margin-top: 50px;
 
     overflow: visible;
     z-index: 0;
@@ -278,53 +271,6 @@ button {
     margin-top: 5px;
     background-color: lightcoral;
     color: white;
-}
-
-/*Video Transition*/
-#sakuraTransition {
-    position: fixed;
-    inset: 0;
-    background: url("Images/Sakura.png") center/cover no-repeat;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.sakura_sweep {
-    animation: sakuraSweep 1.5s ease forwards;
-}
-
-@keyframes sakuraSweep {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-}
-
-/*Video Frame*/
-#videoWrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-#finalVid {
-    width: 80%;
-    max-width: 800px;
-    border-radius: 25px;
-    box-shadow: 
-        0 0 25px rgba(255, 182, 193, 0.6), 
-        0 0 50px rgba(255, 105, 180, 0.4);
-    border: 6px solid rgba(255, 255, 255, 0.6);
 }
 
 /* Bottom text */
