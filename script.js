@@ -147,6 +147,7 @@ function openSlideshow() {
         bgMusic.pause();
         bgMusic.currentTime = 0;
         console.log("Go to Stage 7");
+        startStage7();
     };
 
     replayBtn.onclick = () => {
@@ -192,3 +193,35 @@ function showSlide(index) {
     slideImage.style.animation = "";
     slideImage.classList.add("fade");
 }
+
+// Stage 7
+function startStage7 {
+    const slideshow = document.getElementById("slideshow");
+    const stage7 = document.getElementById("stage7");
+    const sakura = document.getElementById("sakura");
+    const video = document.getElementById("finalVid");
+
+    stage7.classList.remove = "hidden" // Show stage 7
+    sakura.classList.add("sakura") // Sakura transition
+
+    setTimeout(() => {
+        slideshow.classList.add("hidden"); //Hide slide show
+        sakura.classList.remove("sakura_sweep"); //Remove transition
+
+        //Start Video
+        video.volume = 0.6;
+        video.currentTime = 0;
+        video.play();
+    }, 1500);
+}
+
+const video = document.getElementById("finalVideo");
+const endBtn = document.getElementById("endBtn");
+
+video.addEventListener("play", () => {
+    console.log("Video is playing");
+})
+
+video.addEventListener("ended", () => {
+    endBtn.classList.remove("hidden");
+});
