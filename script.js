@@ -3,6 +3,7 @@
 // Created by: Marc Bryan Forbes
 
 const startBtn = document.getElementById("startBtn");
+const bgmIntro = document.getElementById("bgmIntro");
 const main = document.getElementById("main");
 const heart = document.getElementById("heart");
 const heartWrapper = document.getElementById("heartWrapper");
@@ -15,10 +16,18 @@ const replayBtn = document.getElementById("replayBtn");
 startBtn.onclick = () => {
     startBtn.style.display = "none";
     main.classList.remove("hidden");
+
+    bgmIntro.volume = 0.4;
+    bgmIntro.play().catch(() => {
+        console.log("Autoplay blocked until user interaction");
+    });
 }
 
 // Heart pop
 heart.addEventListener("click", () => {
+    bgmIntro.pause();
+    bgmIntro.currentTime = 0;
+
     heart.style.pointerEvents = "none";
     heart.classList.add("pop");
 
