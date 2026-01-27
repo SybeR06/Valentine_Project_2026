@@ -263,15 +263,12 @@ body {
 #replayBtn {
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    right: 40px;
     padding: 10px, 20px;
     font-size: 18px;
-    background: lightcoral;
+    background: lightskyblue;
     color: black;
     border-radius: 8px;
     cursor: pointer;
-}
-
-#replayBtn {
-    right: 120px;
+    z-index: 9999;
 }

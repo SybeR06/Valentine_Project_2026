@@ -88,7 +88,7 @@ const slides = [
     {
         image: "Images/VD Project/23_11_12.jpg", text: "<12 November 2023> <br> and most important person to me." },
     {
-        image: "Images/VD Project/23_11_18.jpg", text: "<18 November 2023> <br> I didn’t fall all at once," },
+        image: "Images/VD Project/23_11_18.jpg", text: "<18 November 2023> <br> I didn't fall all at once," },
     {
         image: "Images/VD Project/23_12_30.jpg", text: "<30 December 2023> <br> it happened in pieces." },
     {
@@ -161,4 +161,15 @@ function showSlide(index) {
     slideImage.classList.add("fade");
 }
 
-replayBtn.addEventListener("click", () => location.reload());
+replayBtn.addEventListener("click", () => {
+    // Hide replay button again
+    replayBtn.classList.add("hidden");
+
+    // Reset index and image/text
+    index = 0;
+    slideImage.src = "";
+    slideText.innerHTML = "";
+
+    // Start slideshow again
+    openSlideshow();
+});
